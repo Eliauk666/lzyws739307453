@@ -40,8 +40,8 @@
 <div align="center">
 
   <!-- GitHub 数据统计 -->
-  <img height="137px" src="https://github-readme-stats.vercel.app/api?username=arcsurge&hide_title=true&show_icons=true&include_all_commits=true&line_height=21&theme=transparent" />
-  <img height="137px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=arcsurge&hide_title=true&layout=compact&langs_count=6&theme=transparent" />
+  <img height="137px" src="https://github-readme-stats.vercel.app/api?username=ArcSurge&hide_title=true&show_icons=true&include_all_commits=true&line_height=21&theme=transparent" />
+  <img height="137px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArcSurge&hide_title=true&layout=compact&langs_count=6&theme=transparent" />
 
 </div>
 
@@ -66,16 +66,16 @@
 
   <!-- GitHub Activity Graph GitHub 活动图 -->
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=arcsurge&theme=xcode&bg_color=FF000000&hide_border=true" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=arcsurge&theme=xcode&bg_color=FF000000&color=000000&hide_border=true" />
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=arcsurge&theme=xcode&bg_color=FF000000&hide_border=true" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=ArcSurge&theme=xcode&bg_color=FF000000&hide_border=true" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=ArcSurge&theme=xcode&bg_color=FF000000&color=000000&hide_border=true" />
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=ArcSurge&theme=xcode&bg_color=FF000000&hide_border=true" />
   </picture>
 
   <img src="https://i.imgur.com/rilHVxA.png"/>
 
 </div>
 <!--
-**arcsurge/arcsurge** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**ArcSurge/ArcSurge** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
 
