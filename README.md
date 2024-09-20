@@ -40,8 +40,8 @@
 <div align="center">
 
   <!-- GitHub 数据统计 -->
-  <img height="137px" src="https://github-readme-stats.vercel.app/api?username=ArcSurge&hide_title=true&show_icons=true&include_all_commits=true&line_height=21&theme=transparent" />
-  <img height="137px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArcSurge&hide_title=true&layout=compact&langs_count=6&theme=transparent" />
+  <img height="137px" src="https://github-readme-stats-sepia-one-88.vercel.app/api?username=ArcSurge&hide_title=true&show_icons=true&include_all_commits=true&theme=transparent&count_private=true&rank_icon=github" />
+  <img height="137px" src="https://github-readme-stats-sepia-one-88.vercel.app/api/top-langs/?username=ArcSurge&hide_title=true&layout=compact&langs_count=6&theme=transparent" />
 
 </div>
 
