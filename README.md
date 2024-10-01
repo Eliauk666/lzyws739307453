@@ -5,7 +5,7 @@
   <br/>
   <!-- dynamic typing effect 动态打字效果 -->
   <div>
-    <a target="_blank" rel="noopener noreferrer nofollow" href="[https://git.io/typing-svg](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&vCenter=true&size=26&pause=1000&random=false&width=435&lines=console.log(%22Hello%2C+World!%22))">
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&vCenter=true&size=26&pause=1000&random=false&width=435&lines=console.log(%22Hello%2C+World!%22)">
       <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&vCenter=true&size=26&pause=1000&random=false&width=435&lines=console.log(%22Hello%2C+World!%22)" alt="Typing SVG" />
     </a>
   </div>
