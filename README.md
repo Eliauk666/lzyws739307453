@@ -5,7 +5,7 @@
   <br/>
   <!-- dynamic typing effect 动态打字效果 -->
   <div>
-    <a href="https://git.io/typing-svg">
+    <a target="_blank" rel="noopener noreferrer nofollow" href="[https://git.io/typing-svg](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&vCenter=true&size=26&pause=1000&random=false&width=435&lines=console.log(%22Hello%2C+World!%22))">
       <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&vCenter=true&size=26&pause=1000&random=false&width=435&lines=console.log(%22Hello%2C+World!%22)" alt="Typing SVG" />
     </a>
   </div>
@@ -51,7 +51,7 @@
   <tr>
     <td>
       <ul>
-        <li>🌱 I’m currently learning Python,Shell and Java.</li>
+        <li>🌱 I’m currently learning Python, Shell and Java.</li>
         <li>🤔 I’m looking for help with Design Pattern 😭.</li>
         <li>💬 Ask me about anything, I am happy to help.</li>
       </ul>
