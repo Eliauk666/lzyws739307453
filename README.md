@@ -43,7 +43,7 @@
 
 </div>
 
-# ✍️ Blog & Writing
+# 💫 About Me
 
 <table>
   <tr>
