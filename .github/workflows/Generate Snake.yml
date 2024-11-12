@@ -48,6 +48,7 @@ jobs:
           # 遍历每个URL并发送PURGE请求
           for url in "${unique_urls[@]}"; do
               purge_url=$(echo "$url" | sed 's|cdn.jsdelivr.net/gh|purge.jsdelivr.net/gh|')
+              echo "curl - $purge_url"
               curl -s -o /dev/null "$purge_url"
           done
       - name: Purge All Camo
@@ -58,5 +59,6 @@ jobs:
           readarray -t unique_urls <<< "$(echo "$urls" | tr ' ' '\n' | sort | uniq)"
           # 对每个去重后的URL执行PURGE操作
           for url in "${unique_urls[@]}"; do
-              curl -s -o /dev/null -X PURGE "$url"                                                 
+              echo "curl - $url"
+              curl -s -o /dev/null -X PURGE "$url"
           done
