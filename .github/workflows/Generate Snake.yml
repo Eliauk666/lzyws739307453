@@ -38,7 +38,7 @@ jobs:
       - name: Purge CDN Cache
         run: |
           # 获取cdn.jsdelivr.net链接
-          cdn_urls=$(curl -sLk "https://github.com/${{ github.repository_owner }}/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://cdn.jsdelivr.net/gh/${{ github.repository_owner }}/${{ github.repository }}@[^ \\\"']+")
+          cdn_urls=$(curl -sLk "https://github.com/${{ github.repository_owner }}/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://cdn.jsdelivr.net/gh/${{ toLower(github.repository_owner) }}/${{ toLower(github.repository) }}@[^ \\\"']+")
           # 将URL列表转换为数组，并去重
           readarray -t unique_urls <<< "$(echo "$cdn_urls" | tr ' ' '\n' | sort | uniq)"
           # 遍历每个URL并发送PURGE请求
