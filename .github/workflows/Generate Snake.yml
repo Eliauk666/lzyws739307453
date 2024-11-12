@@ -22,7 +22,6 @@ jobs:
       - id: env
         name: Set Environment Variables
         run: |
-          echo "OWNER_LOWER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
           echo "REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
       - name: Generate Snake
         uses: Platane/snk/svg-only@v3
@@ -43,7 +42,7 @@ jobs:
       - name: Purge CDN Cache
         run: |
           # 获取cdn.jsdelivr.net链接
-          cdn_urls=$(curl -sLk "https://github.com/${{ github.repository_owner }}/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://cdn.jsdelivr.net/gh/${{ steps.env.outputs.OWNER_LOWER }}/${{ steps.env.outputs.REPO_LOWER }}@[^ \\\"']+")
+          cdn_urls=$(curl -sLk "https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://cdn.jsdelivr.net/gh/${{ steps.env.outputs.REPO_LOWER }}@[^ \\\"']+")
           # 将URL列表转换为数组，并去重
           readarray -t unique_urls <<< "$(echo "$cdn_urls" | tr ' ' '\n' | sort | uniq)"
           # 遍历每个URL并发送PURGE请求
@@ -54,7 +53,7 @@ jobs:
       - name: Purge All Camo
         run: |
           # 获取URL列表
-          urls=$(curl -sLk "https://github.com/${{ github.repository_owner }}/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://camo.githubusercontent.com[a-zA-Z0-9./?=_%:-]*")
+          urls=$(curl -sLk "https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://camo.githubusercontent.com[a-zA-Z0-9./?=_%:-]*")
           # 将URL列表转换为数组，并去重
           readarray -t unique_urls <<< "$(echo "$urls" | tr ' ' '\n' | sort | uniq)"
           # 对每个去重后的URL执行PURGE操作
