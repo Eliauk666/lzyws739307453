@@ -26,7 +26,6 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-
       # push the content of <build_dir> to a branch
       # the content will be available at https://raw.githubusercontent.com/<github_user>/<repository>/<target_branch>/<file> , or as github page
       - name: GitHub Pages
@@ -36,3 +35,24 @@ jobs:
           target_branch: output
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Purge CDN Cache
+        run: |
+          # 获取cdn.jsdelivr.net链接
+          cdn_urls=$(curl -sLk "https://github.com/${{ github.repository_owner }}/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://cdn.jsdelivr.net/gh/${{ github.repository_owner }}/${{ github.repository }}@[^ \\\"']+")
+          # 将URL列表转换为数组，并去重
+          readarray -t unique_urls <<< "$(echo "$cdn_urls" | tr ' ' '\n' | sort | uniq)"
+          # 遍历每个URL并发送PURGE请求
+          for url in "${unique_urls[@]}"; do
+              purge_url=$(echo "$url" | sed 's|cdn.jsdelivr.net/gh|purge.jsdelivr.net/gh|')
+              curl -s -o /dev/null "$purge_url"
+          done
+      - name: Purge All Camo
+        run: |
+          # 获取URL列表
+          urls=$(curl -sLk "https://github.com/${{ github.repository_owner }}/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://camo.githubusercontent.com[a-zA-Z0-9./?=_%:-]*")
+          # 将URL列表转换为数组，并去重
+          readarray -t unique_urls <<< "$(echo "$urls" | tr ' ' '\n' | sort | uniq)"
+          # 对每个去重后的URL执行PURGE操作
+          for url in "${unique_urls[@]}"; do
+              curl -s -o /dev/null -X PURGE "$url"                                                 
+          done
