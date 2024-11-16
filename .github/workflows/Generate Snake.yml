@@ -16,7 +16,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     steps:
       - id: env
@@ -41,6 +41,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Purge CDN Cache
         run: |
+          # 等待5分钟
+          sleep 300
           # 获取cdn.jsdelivr.net链接
           cdn_urls=$(curl -sLk "https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://cdn.jsdelivr.net/gh/${{ steps.env.outputs.REPO_LOWER }}@[^ \\\"']+")
           # 将URL列表转换为数组，并去重
@@ -53,6 +55,8 @@ jobs:
           done
       - name: Purge All Camo
         run: |
+          # 等待5分钟
+          sleep 300
           # 获取URL列表
           urls=$(curl -sLk "https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/README.md" | grep -Eo "https?://camo.githubusercontent.com[a-zA-Z0-9./?=_%:-]*")
           # 将URL列表转换为数组，并去重
